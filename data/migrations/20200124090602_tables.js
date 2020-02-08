@@ -14,12 +14,16 @@ exports.up = function(knex) {
       tbl.increments();
 
       tbl.integer('project_id')
+        .unsigned()
+        .notNullabe()
+        .references('id')
+        .inTable('projects');
 
       tbl.string('description', 255)
         .index();
 
       tbl.string('notes', 255);
-
+  
       tbl.boolean('completed')
         .defaultTo(false);
   })
@@ -44,12 +48,6 @@ exports.up = function(knex) {
       .notNullabe()
       .references('id')
       .inTable('projects')
-    
-    tbl.integer('tasks_id')
-        .unsigned()
-        .notNullabe()
-        .references('id')
-        .inTable('tasks');
     
     tbl.integer('resources_id');
         .unsigned()

@@ -1,0 +1,21 @@
+const projects = {
+    id: 1,
+    name: "",
+    desc: "",
+    completed: bool,
+    taskId: [],
+    recID: []
+}
+
+const task = {
+    id: 1,
+    name: "",
+    projectId: 1
+}
+
+const resources = {
+    id: 1,
+    projectId: [],
+    name: "",
+    desc: ""
+}
